@@ -121,7 +121,7 @@ def personal():
     
     # outdoor pictures
     image_info = [
-        ("img/personal/porkies1.heic", "Presque Isle Falls, Michigan"),
+        ("img/personal/porkies1.HEIC", "Presque Isle Falls, Michigan"),
         ("img/personal/porkies2.JPG", "The usual setup! Big ole tent + screent tent"),
         ("img/personal/porkies3.JPG", "Saw my first ever wild bear in 2024!")
     ]
@@ -160,9 +160,9 @@ def personal():
     
     # live event pictures
     image_info = [
-        ("img/personal/red_rocks.heic", "Tyler Childers @ Red Rocks"),
+        ("img/personal/red_rocks.HEIC", "Tyler Childers @ Red Rocks"),
         ("img/personal/tuck.jpeg", "Bark at the Park with Tucker"),
-        ("img/personal/pack.heic", "LAMBEAU FIELD")
+        ("img/personal/pack.HEIC", "LAMBEAU FIELD")
     ]
     target_size = (200, 270)
     images = [(Image.open(path).resize(target_size), caption) for path, caption in image_info]
