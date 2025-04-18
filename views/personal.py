@@ -89,9 +89,9 @@ def personal():
 
     # fitness pictures
     image_info = [
-        ("img/personal/basketball.jpg", "Intramural champs baby!"),
+        ("img/personal/basketball.JPG", "Intramural champs baby!"),
         ("img/personal/half_marathon.jpeg", "Half Marathon 2023!"),
-        ("img/personal/bike_ride.jpg", "Views from my bike ride to work")
+        ("img/personal/bike_ride.JPG", "Views from my bike ride to work")
     ]
     target_size = (200, 270)
     images = [(Image.open(path).resize(target_size), caption) for path, caption in image_info]
@@ -122,8 +122,8 @@ def personal():
     # outdoor pictures
     image_info = [
         ("img/personal/porkies1.heic", "Presque Isle Falls, Michigan"),
-        ("img/personal/porkies2.jpg", "The usual setup! Big ole tent + screent tent"),
-        ("img/personal/porkies3.jpg", "Saw my first ever wild bear in 2024!")
+        ("img/personal/porkies2.JPG", "The usual setup! Big ole tent + screent tent"),
+        ("img/personal/porkies3.JPG", "Saw my first ever wild bear in 2024!")
     ]
     target_size = (200, 270)
     images = [(Image.open(path).resize(target_size), caption) for path, caption in image_info]
