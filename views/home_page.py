@@ -1,42 +1,34 @@
 import streamlit as st
+from PIL import Image
 
 def home_page():
     """
     Home page layout.
-    """
-    st.title("Welcome to My Portfolio 👋")
-    st.write("Hello! I'm John, a data scientist currently located in Milwaukee, Wisconsin.")
-    st.write(f"\n\n")
-
-    st.header("📄Page Description")
-    st.write(f"""This is my personal portfolio page where I put pretty much everything - including my work, personal projects,
-             and much more. Feel free to explore my work and connect if you'd like! My resume, projects, and contact infromation
-             can all be found in the sidebar. 😊""")
-    st.write(f"\n\n")
     
-    st.header("🛠️ The Technical Side")
-    st.write(
-        f"""
-        My data science journey began in 2016 as an undergrad at the University of Wisconsin - La Crosse. While I was there
-        I received a Master's degree in Applied Statistics, as well as a Bachelor's degree in Statistics.
+    Displays:
+    - Intro statement
+    - Page description
+    - Image of me
+    """
+    with st.container():
+        col1, col2 = st.columns([3, 1])
 
-        After graduating I began working an internship as a data scientist at [U.S. Geological Survey](https://www.usgs.gov/). I learned and
-        grew alot here, as I got to apply some of the skills that I learned in school for the first time. I was involved with several
-        projects that were centered around datasets for invasive and endangered species. I even got to co-author a paper!
+        # writing (intro statement + page description)
+        with col1:
+            st.title("Welcome to My Portfolio 👋")
+            st.write("Hello! I'm John, a data scientist currently located in Milwaukee, Wisconsin.")
+            st.markdown("<br>", unsafe_allow_html=True)
+            st.header("📄 Page Description")
+            st.write("""This is my personal portfolio page where I put pretty much everything - 
+                     including my resume, personal projects, and much more. Feel free to explore my work and connect if you'd like! 
+                     """)
+            st.write("""The sidebar on the left will take you to wherever you'd like. You can navigate between my personal introduction,
+                     resume, projects, and contact information all over there. 😊
+                     """)
 
-        My internship concluded in the summer of 2022 and I moved back to my hometown of Milwaukee, Wisconsin, where I accepted a position
-        as a data scientist at [Elutions](https://www.elutions.com/). I've been fortunate to work on 
-        some really cool projects while working here, including:
-
-        - Building, optimizing, and deploying models to optimize industrial machine performance.  
-        - Developing and maintaining pipelines to support machine learning models.  
-        - Analyzing machine failure data to predict future failures.  
-        """
-    )
-    st.write(f"\n\n")
-
-
-    st.header("🏕️ Beyond Data (Away From My Desk)")
-    st.write(
-        ""
-    )
+        # image
+        with col2:
+            image = Image.open("img/home_page/me.png")
+            resized_image = image.resize((800, 600)) 
+            st.markdown("<br><br><br>", unsafe_allow_html=True)
+            st.image(resized_image, caption="Welcome to my page!", use_container_width=True)

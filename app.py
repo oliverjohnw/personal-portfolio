@@ -1,18 +1,20 @@
 import streamlit as st
 
 # local imports
-from views import home_page, resume_page, projects_page, contact_page
+from views import home_page, personal, resume_page, projects_page, contact_page
 
 def main():
 
     # page settings
     st.set_page_config(page_title="My Portfolio", layout="wide")
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Home", "Resume", "Projects", "Contact"])
+    page = st.sidebar.radio("Go to", ["Home", "Personal", "Resume", "Projects", "Contact"])
 
     # page selections
     if page == "Home":
         home_page()
+    elif page == "Personal":
+        personal()
     elif page == "Resume":
         resume_page()
     elif page == "Projects":
